@@ -13,16 +13,20 @@ module.exports = {
   },
 
   module: {
-      rules: [
-          {
-              test: /\.scss$/, 
-              use: ExtractTextPlugin.extract({
-                  fallbackLoader: 'style-loader',
-                  loader: ['css-loader','sass-loader'],
-                  publicPath: '/dist'
-              })
-          }
-      ]
+    rules: [
+      {
+        test: /\.scss$/, 
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader','sass-loader'],
+          publicPath: '/'
+        })
+      },
+      {
+        test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
+        use: 'file-loader'
+      }
+    ]
   },
   devServer: {
       contentBase: path.join(__dirname, "dist"),

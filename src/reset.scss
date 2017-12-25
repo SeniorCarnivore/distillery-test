@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 html,
 body,
 div,
@@ -106,7 +110,8 @@ body {
 }
 
 ol,
-ul {
+ul,
+menu {
   list-style: none;
 }
 

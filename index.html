@@ -7,7 +7,101 @@
     <title>test</title>
 </head>
 <body>
-    <p>test</p>
-    <script src="assets/bundle.js"></script>
+  <div class="main-wrapper">
+
+    <menu class="main-menu">
+      <li class="main-menu-item">
+        <a href="#">Главная</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#">Фото и видео</a>
+      </li>
+      <li class="main-menu-item logo">
+        <a href="#"></a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#">Форма отзыва</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#">HTML academy</a>
+      </li>
+    </menu>
+  
+    <header class="head">
+      <h1 class="head-text">Sedona<h1>
+    </header>
+  
+    <form>
+      <section class="content-wrapper">
+        <div class="content-block title-block">
+          <h2 class="title">Оставьте свой отзыв</h2>
+          <p class="sub-title">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+        </div>
+      </section>
+
+      <section class="content-wrapper">
+        <div class="content-block">
+          <div class="column column-left">
+            <h3 class="form-title">ВАше Общее впечатление:</h3>
+            
+            <div class="input-holder radio-box">
+              <input class="input" type="radio" id="ch1" name="test">
+              <label class="label" for="ch1">Скорее положительное</label>
+            </div>
+
+            <div class="input-holder radio-box">
+              <input class="input" type="radio" id="ch2" name="test">
+              <label class="label" for="ch2">Скорее отрицательное</label>
+            </div>
+
+            <div class="input-holder radio-box">
+              <input class="input" type="radio" id="ch3" name="test">
+              <label class="label" for="ch3">Затрудняюсь ответить</label>
+            </div>
+          </div>
+
+          <div class="column-devider"></div>
+
+          <div class="column column-right">
+            <h3 class="form-title">Представьтесь:</h3>
+
+            <div class="input-holder">
+              <label class="label" for="in1">ИМЯ*:</label>
+              <input class="input" type="text" id="in1">
+            </div>
+
+            <div class="input-holder">
+              <label class="label" for="in2">ФАМИЛИЯ*:</label>
+              <input class="input" type="text" id="in2">
+            </div>
+
+            <div class="input-holder">
+              <label class="label" for="in3">Отчество:</label>
+              <input class="input" type="text" id="in3">
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+  
+    <footer>
+      <a href="#" class="hash">#visitSEDONA</a>
+  
+      <ul class="socials">
+        <li class="vk"></li>
+        <li class="fb"></li>
+        <li class="yt"></li>
+      </ul>
+
+      <a href="#" class="copyright">
+        <p>Разработано</p>
+        <div class="studio-logo"></div>
+      </a>
+    </footer>
+
+  </div>
+
+  <script src="assets/bundle.js"></script>
+
 </body>
 </html>
