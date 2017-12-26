@@ -4,8 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    './style.css': './src/style.scss',
-    './bundle.js': './src/main.js'
+    './style.css': './src/style.scss'
   },
   output: {
     path: path.join(__dirname, 'assets'),
@@ -18,8 +17,7 @@ module.exports = {
         test: /\.scss$/, 
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader','sass-loader'],
-          publicPath: '/'
+          use: ['css-loader','sass-loader']
         })
       },
       {
@@ -38,7 +36,7 @@ module.exports = {
       new HtmlWebpackPlugin({
           title: 'Project Demo',
           hash: true,
-          template: './index.html'
+          template: 'index.html'
       }),
       new ExtractTextPlugin({
           filename: 'app.css',

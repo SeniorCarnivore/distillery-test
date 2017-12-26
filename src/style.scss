@@ -54,6 +54,27 @@ body {
     color: #000;
     text-transform: uppercase;
     font-weight: bold;
+    transition: color .2s;
+
+    &.active {
+      color: #766357;
+
+      &:hover {
+        color: #604e43;
+      }
+
+      &:active {
+        color: #d6d0cc;
+      }
+    }
+
+    &:hover {
+      color: #81b3d2;
+    }
+
+    &:active {
+      color: #b2b2b2;
+    }
   }
 }
 
@@ -62,7 +83,7 @@ body {
   justify-content: center;
   position: relative;
   height: 300px;
-  margin-bottom: 54px;
+  margin-bottom: 112px;
   background-image: url('img/bg.jpg');
   background-size: cover;
   background-position: center;
@@ -75,7 +96,7 @@ body {
     background-image: url('img/logo.png');
   }
   
-  &:before {
+  &::before {
     // маска и маска
     content: '';
     display: block;
@@ -91,7 +112,38 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: 60px;
+
+  &.title-section {
+    margin-bottom: 59px;
+  }
+
+  &.two-cols-section {
+    margin-bottom: 46px;
+  }
+
+  &.contact-section {
+    margin-bottom: 32px;
+
+    .form-title-decor {
+      margin-bottom: 75px;
+    }
+  }
+
+  &.poi-section {
+    margin-bottom: 65px;
+
+    .form-title-decor {
+      margin-bottom: 42px;
+    }
+  }
+
+  &.emotion-section {
+    margin-bottom: 102px;
+
+    .form-title-decor {
+      margin-bottom: 58px;
+    }
+  }
 
   .content-block {
     width: 960px;
@@ -103,7 +155,6 @@ body {
       max-width: 440px;
       text-align: center;
       flex-direction: column;
-      margin-bottom: 70px;
     }
   }
 }
@@ -113,7 +164,7 @@ body {
 	font-weight: bold;
   line-height: 0.87;
   text-transform: uppercase;
-  margin-bottom: 31px;
+  margin-bottom: 33px;
 }
 
 .sub-title {
@@ -149,7 +200,6 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 75px;
 
   .dash {
     width: 100%;
@@ -169,7 +219,7 @@ body {
 
   &.in-column {
     text-align: left;
-    padding: 0 0 60px 79px;
+    padding: 0 0 59px 79px;
     box-sizing: border-box;
     margin: 0;
   }
@@ -186,7 +236,7 @@ body {
   
   &.fixed {
     .input {
-      width: 260px;
+      width: 256px;
       margin-left: 18px;
     }
 
@@ -201,9 +251,25 @@ body {
       width: 58px;
       height: 58px;
       opacity: 0;
-      margin-left: 0;
+      margin: 0 20px 0 0;
       margin-right: 20px;
       cursor: pointer;
+
+      &:hover {
+        &+.label {
+          &::before {
+            background-color: #e5e5e5;
+          }
+        }
+      }
+
+      &:active {
+        &+.label {
+          &::before {
+            background-color: #d5d5d5;
+          }
+        }
+      }
 
       &:checked {
         &+.label {
@@ -215,15 +281,36 @@ body {
     }
 
     .label {
-      &:before,
-      &:after {
+      font-weight: bold;
+      text-transform: none;
+      font-size: 18px;
+
+      &:hover {
+        &::before {
+          background-color: #e5e5e5;
+        }
+      }
+
+      &:active {
+        &::before {
+          background-color: #d5d5d5;
+        }
+
+        &::after {
+          background-color: #a4a4a4;
+        }
+      }
+
+      &::before,
+      &::after {
         content: '';
         position: absolute;
         border-radius: 51%;
         pointer-events: none;
+        transition: all .2s;
       }
 
-      &:before {
+      &::before {
         top: 0;
         left: 0;
         width: 58px;
@@ -238,7 +325,6 @@ body {
         left: 18px;
         transform: scale(0);
         background-color: #333333;
-        transition: transform .2s;
       }
     }
   }
@@ -274,9 +360,16 @@ body {
   font-weight: bold;
   box-shadow: none;
   background-color: #f2f2f2;
+  transition: all .2s;
+  box-shadow: 0px 0px 0px 0px #e5e5e5 inset;
+  
+  &:hover {
+    background-color: #e5e5e5;
+  }
 
-  .checkbox {
-
+  &:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 4px #e5e5e5 inset;
   }
 }
 
@@ -293,25 +386,27 @@ body {
 
 .checkbox-row {
   display: flex;
+  justify-content: space-between;
 
   .checkbox-col {
-    width: 25%;
     display: flex;
     align-items: center;
     position: relative;
 
     .label {
       font-weight: bold;
+      letter-spacing: 1.1px;
 
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         content: '';
         display: block;
         position: absolute;
         pointer-events: none;
+        transition: all .2s;
       }
 
-      &:before {
+      &::before {
         width: 56px;
         height: 56px;
         top: 0;
@@ -346,6 +441,26 @@ body {
   cursor: pointer;
   z-index: 1;
 
+  &:hover {
+    &+.label {
+      &::before {
+        background-color: #e5e5e5;
+      }
+    }
+  }
+
+  &:active {
+    &+.label {
+      &::before {
+        background-color: #d5d5d5;
+      }
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+  }
+
   &:checked {
     &+.label {
       &:after {
@@ -356,16 +471,27 @@ body {
 }
 
 .text-area {
+  height: 159px;
   box-sizing: border-box;
   line-height: 26px;
   font-size: 18px;
   font-weight: bold;
   padding: 22px;
-  // margin-bottom: 58px;
+  margin-bottom: 50px;
   box-shadow: none;
   border: 0;
   resize: none;
   background-color: #f2f2f2;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 4px #e5e5e5 inset;
+  }
 }
 
 .submit {
@@ -377,6 +503,17 @@ body {
   line-height: 56px;
   color: #fff;
   background-color: #81b3d2;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+    color: #88b6d1;
+  }
 }
 
 .fields-tip {
@@ -414,30 +551,63 @@ body {
 
   .socials {
     display: flex;
+    margin-right: 21px;
 
     .icon {
       display: block;
+      position: relative;
       width: 48px;
       height: 48px;
-      background-color: #81b3d2;
       margin-right: 6px;
-      background-repeat: no-repeat;
-      background-position: center;
+      background-color: #81b3d2;
+      transition: all .2s;
+
+      &:hover {
+        background-color: #669ec0;
+      }
+
+      &:active {
+        background-color: #5496bd;
+
+        .link {
+          opacity: 0.7;
+        }
+      }
 
       &:last-child {
         margin-right: 0;
       }
 
+      .link{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity .2s;
+      }
+
       &.tw {
-        background-image: url('img/ico/tw.png');
+        .link {
+          background-image: url('img/ico/tw.png');
+        }
       }
 
       &.fb {
-        background-image: url('img/ico/fb.png');
+        .link {
+          background-image: url('img/ico/fb.png');
+        }
       }
 
       &.yt {
-        background-image: url('img/ico/yt.png');
+        .link {
+          background-image: url('img/ico/yt.png');
+        }
       }
     }
   }
