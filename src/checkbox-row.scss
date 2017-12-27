@@ -1,0 +1,108 @@
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    padding: 0 96px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+
+  .checkbox-col {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 768px) {
+      height: 56px;
+    }
+
+    @media (max-width: 768px) {
+      &:nth-child(odd) {
+        width: 50%;
+        margin: 0 29px 32px 0;
+      }
+    }
+
+    .label {
+      font-weight: bold;
+      letter-spacing: 1.1px;
+
+      @media (max-width: 768px) {
+        text-transform: none;
+        letter-spacing: 0.7px;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        transition: all .2s;
+      }
+
+      &::before {
+        width: 56px;
+        height: 56px;
+        top: 0;
+        left: 0;
+        background-color: #f2f2f2;
+        border-radius: 7px;
+      }
+
+      &:after {
+        width: 24px;
+        height: 16px;
+        background-image: url('img/ico/check.png');
+        top: 20px;
+        left: 17px;
+        z-index: 1;
+        transform: scale(0) rotate(30deg);
+        transition: transform .2s;
+      }
+    }
+  }
+}
+
+.checkbox {
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  opacity: 0;
+  margin: 0;
+  margin-right: 25px;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    &+.label {
+      &::before {
+        background-color: #e5e5e5;
+      }
+    }
+  }
+
+  &:active {
+    &+.label {
+      &::before {
+        background-color: #d5d5d5;
+      }
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &:checked {
+    &+.label {
+      &:after {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+  }
+}
