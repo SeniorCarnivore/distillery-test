@@ -21,16 +21,33 @@ body {
   }
 }
 
+.form {
+  @media (max-width: 320px){
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
 .content-wrapper {
   display: flex;
   width: 100%;
   justify-content: center;
+
+  @media (max-width: 320px) {
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 
   &.title-section {
     margin-bottom: 59px;
 
     @media (max-width: 768px) {
       margin-bottom: 75px;
+    }
+
+    @media (max-width: 320px) {
+      order: 1;
     }
   }
 
@@ -40,6 +57,10 @@ body {
     @media (max-width: 768px) {
       margin-bottom: 48px;
     }
+
+    @media (max-width: 320px) {
+      order: 3;
+    }
   }
 
   &.contact-section {
@@ -47,6 +68,10 @@ body {
     
     @media (max-width: 768px) {
       margin-bottom: 28px;
+    }
+
+    @media (max-width: 320px) {
+      order: 2;
     }
 
     .form-title-decor {
@@ -63,6 +88,10 @@ body {
 
     @media (max-width: 768px) {
       margin-bottom: 37px;
+    }
+
+    @media (max-width: 320px) {
+      order: 4;
     }
 
     .form-title-decor {
@@ -85,6 +114,10 @@ body {
       margin-bottom: 96px;
     }
 
+    @media (max-width: 320px) {
+      order: 5;
+    }
+
     .form-title-decor {
       margin-bottom: 58px;
     }
@@ -97,6 +130,10 @@ body {
 
     @media (max-width: 768px) {
       max-width: 648px;
+    }
+
+    @media (max-width: 320px) {
+      max-width: 280px;
     }
 
     &.title-block {
@@ -114,6 +151,10 @@ body {
 .columns {
   display: flex;
   width: 100%;
+
+  @media (max-width: 320px){
+    flex-direction: column;
+  }
 
   &.mobile-wide {
     @media (max-width: 768px) {
@@ -151,6 +192,10 @@ body {
 .column {
   width: calc((100% - 1px) / 2);
 
+  @media (max-width: 320px) {
+    width: 100%;
+  }
+
   &.column-right {
 
     .input-holder {
@@ -158,6 +203,10 @@ body {
 
       @media (max-width: 768px) {
         padding-left: 56px;
+      }
+
+      @media (max-width: 320px) {
+        padding-left: 0;
       }
 
       &.fixed {
@@ -169,6 +218,14 @@ body {
       .form-title {
         &.in-column {
           padding: 0 0 58px 55px;
+        }
+      }
+    }
+
+    @media (max-width: 320px) {
+      .form-title {
+        &.in-column {
+          padding: 0 0 58px 0;
         }
       }
     }

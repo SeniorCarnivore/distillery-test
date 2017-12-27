@@ -14,6 +14,10 @@
     height: 290px;
   }
 
+  @media (max-width: 320px) {
+    height: 158px;
+  }
+
   .head-text {
     margin-top: 102px;
     width: 461px;
@@ -24,10 +28,16 @@
       margin-top: 95px;
       width: 460px;
     }
+
+    @media (max-width: 320px) {
+      width: 226px;
+      height: 38px;
+      margin-top: 51px;
+      background-size: cover;
+    }
   }
   
   &::before {
-    // маска и маска
     content: '';
     display: block;
     position: absolute;

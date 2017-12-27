@@ -1,6 +1,11 @@
 .main-menu {
   height: 56px;
   display: flex;
+
+  @media (max-width: 320px) {
+    height: initial;
+    flex-direction: column;
+  }
 }
 
 .main-menu-item {
@@ -10,8 +15,31 @@
   width: 20%;
   z-index: 1;
 
+  @media (max-width: 320px) {
+    display: flex;
+    width: 100%;
+    min-height: 55px;
+    max-height: 55px;
+    background-color: #81b3d2;
+    border-bottom: 1px solid #678fa8;
+    border-top: 1px solid #9ac2db;
+
+    a {
+      color: #fff;
+    }
+
+    &.logo {
+      border-bottom: 0;
+      background-color: #fff;
+    }
+  }
+
   &.logo {
     position: relative;
+
+    @media (max-width: 320px) {
+      order: 5;
+    }
 
     a {
       display: block;
