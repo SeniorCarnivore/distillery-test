@@ -25,6 +25,7 @@ body {
   @media (max-width: 320px){
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
   }
 }
@@ -47,7 +48,9 @@ body {
     }
 
     @media (max-width: 320px) {
-      order: 1;
+      margin-bottom: 22px;
+      padding-bottom: 21px;
+      border-bottom: 1px solid #e6e6e6;
     }
   }
 
@@ -59,7 +62,28 @@ body {
     }
 
     @media (max-width: 320px) {
-      order: 3;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+
+      .columns {
+        flex-direction: column-reverse;
+
+        .column-left {
+
+          .form-title {
+            &.in-column {
+              margin-top: 44px;
+              letter-spacing: inherit;
+              padding-bottom: 23px;
+            }
+          }
+        }
+
+        .column-right {
+          margin-bottom: 300px;
+        }
+      }
     }
   }
 
@@ -70,15 +94,25 @@ body {
       margin-bottom: 28px;
     }
 
-    @media (max-width: 320px) {
-      order: 2;
-    }
-
     .form-title-decor {
       margin-bottom: 75px;
 
       @media (max-width: 768px) {
         margin-bottom: 31px;
+      }
+
+      @media (max-width: 320px) {
+        margin-bottom: 29px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      position: absolute;
+      top: 464px;
+      border-top: 1px solid #e6e6e6;
+
+      .content-block {
+        padding-top: 20px;
       }
     }
   }
@@ -91,7 +125,8 @@ body {
     }
 
     @media (max-width: 320px) {
-      order: 4;
+      border-bottom: 1px solid #e6e6e6;
+      margin-bottom: 22px;
     }
 
     .form-title-decor {
@@ -104,6 +139,10 @@ body {
           line-height: 1.08;
         }
       }
+
+      @media (max-width: 320px) {
+        margin-bottom: 23px;
+      }
     }
   }
 
@@ -115,11 +154,19 @@ body {
     }
 
     @media (max-width: 320px) {
-      order: 5;
+      margin-bottom: 76px;
+
+      .column-right {
+        display: none;
+      }
     }
 
     .form-title-decor {
       margin-bottom: 58px;
+
+      @media(max-width: 320px) {
+        margin-bottom: 18px;
+      }
     }
   }
 
@@ -186,6 +233,24 @@ body {
         }
       }
     }
+
+    @media (max-width: 320px) {
+      .columns {
+        .column {
+          &:last-child {
+            margin-bottom: 26px;
+          }
+        }
+      }
+
+      .column {
+        .input-holder {
+          &.fixed {
+            margin-bottom: 47px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -225,7 +290,7 @@ body {
     @media (max-width: 320px) {
       .form-title {
         &.in-column {
-          padding: 0 0 58px 0;
+          padding: 0 0 21px 0;
         }
       }
     }

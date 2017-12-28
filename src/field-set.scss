@@ -10,7 +10,7 @@
   }
 
   @media (max-width: 320px) {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
@@ -64,6 +64,10 @@
       letter-spacing: -2px;
       padding: 0 0 58px 0;
     }
+
+    @media (max-width: 320px) {
+      text-align: center;
+    }
   }
 }
 
@@ -93,6 +97,10 @@
   }
 
   &.radio-box {
+
+    @media (max-width: 320px) {
+      margin-bottom: 10px;
+    }
 
     .input {
       width: 58px;
@@ -253,5 +261,12 @@
     right: 0;
     left: inherit;
     bottom: 71px;
+  }
+
+  @media (max-width: 320px) {
+    top: inherit;
+    right: inherit;
+    bottom: -24px;
+    left: 21px;
   }
 }

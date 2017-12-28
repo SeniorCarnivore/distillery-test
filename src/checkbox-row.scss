@@ -32,11 +32,11 @@
 
     @media (max-width: 320px) {
       width: 100%;
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
 
       &:nth-child(odd) {
         width: 100%;
-        margin: 0 0 32px 0;
+        margin: 0 0 24px 0;
       }
     }
 
@@ -47,6 +47,10 @@
       @media (max-width: 768px) {
         text-transform: none;
         letter-spacing: 0.7px;
+      }
+
+      @media (max-width: 320px) {
+        font-size: 18px;
       }
 
       &::before,

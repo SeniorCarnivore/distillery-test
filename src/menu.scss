@@ -18,20 +18,11 @@
   @media (max-width: 320px) {
     display: flex;
     width: 100%;
-    min-height: 55px;
-    max-height: 55px;
+    min-height: 54px;
+    max-height: 54px;
     background-color: #81b3d2;
     border-bottom: 1px solid #678fa8;
     border-top: 1px solid #9ac2db;
-
-    a {
-      color: #fff;
-    }
-
-    &.logo {
-      border-bottom: 0;
-      background-color: #fff;
-    }
   }
 
   &.logo {
@@ -39,9 +30,11 @@
 
     @media (max-width: 320px) {
       order: 5;
+      border-bottom: 0;
+      background-color: #fff;
     }
 
-    a {
+    .main-menu-link {
       display: block;
       position: absolute;
       top: 0;
@@ -60,13 +53,17 @@
     }
   }
 
-  a {
+  .main-menu-link {
     font-weight: bold;
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
     font-weight: bold;
     transition: color .2s;
+
+    @media (max-width: 320px) {
+      color: #fff;
+    }
 
     &.active {
       color: #766357;
